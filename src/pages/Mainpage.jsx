@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import Search from './Search'
-import NewNavbar from './NewNavbar'
+import NewsNavbar from './NewsNavbar'
 import { Button, Card, Row } from 'react-bootstrap'
 import axios from 'axios'
 import NewsCard from './NewsCard'
@@ -28,7 +28,7 @@ const Mainpage = () => {
     return (
         <>
             <Search />
-            <NewNavbar />
+            <NewsNavbar />
 
             <Row>
 

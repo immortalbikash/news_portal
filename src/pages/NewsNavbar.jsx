@@ -1,12 +1,13 @@
 import React from 'react'
 import { Container, Nav, Navbar } from 'react-bootstrap'
+import { Link } from 'react-router-dom'
 
-const NewNavbar = () => {
+const NewsNavbar = () => {
     return (
         <>
             <Navbar bg="dark" data-bs-theme="dark">
                 <Container>
-                    <Navbar.Brand href="#home">News</Navbar.Brand>
+                    <Navbar.Brand to="#home"><Link to="/">News</Link></Navbar.Brand>
                     <Nav className="me-auto">
                         <Nav.Link href="#home">Home</Nav.Link>
                         <Nav.Link href="#features">Business</Nav.Link>
@@ -24,4 +25,4 @@ const NewNavbar = () => {
     )
 }
 
-export default NewNavbar
+export default NewsNavbar
