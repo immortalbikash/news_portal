@@ -30,8 +30,7 @@ const Mainpage = () => {
             <Search />
             <NewsNavbar />
 
-            <Row>
-
+            <Row className='row-cols-1 row-cols-sm-2 row-cols-md-4 g-4'>
                 {
                     news.map((el => (
                         <NewsCard data={el} />

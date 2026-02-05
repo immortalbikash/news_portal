@@ -20,8 +20,8 @@ const NewsCard = (props) => {
     }
     return (
         <>
-            <Col className='mt-2'>
-                <Card style={{ width: '16rem' }}>
+            <Col className='mt-2 mb-5'>
+                <Card className='h-100 w-100'>
                     <Card.Img variant="top" src={props.data.urlToImage || noImage} />
                     <Card.Body>
                         <Card.Title>{props.data.title}</Card.Title>
@@ -31,7 +31,7 @@ const NewsCard = (props) => {
                         <Button onClick={readNews} variant="dark">Read More</Button>
                     </Card.Body>
                 </Card>
-            </Col>
+            </Col >
         </>
     )
 }
