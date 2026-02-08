@@ -9,7 +9,7 @@ const NewsNavbar = () => {
                 <Container>
                     <Navbar.Brand to="#home"><Link to="/">News</Link></Navbar.Brand>
                     <Nav className="me-auto">
-                        <Nav.Link href="#home">Home</Nav.Link>
+                        <Nav.Link href="#home"><Link to='/business'>Business</Link></Nav.Link>
                         <Nav.Link href="#features">Business</Nav.Link>
                         <Nav.Link href="#pricing">Entertainment</Nav.Link>
                         <Nav.Link href="#pricing">General</Nav.Link>

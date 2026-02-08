@@ -13,7 +13,7 @@ const Mainpage = () => {
         try {
             const response = await axios.get("https://newsapi.org/v2/top-headlines?country=us&apiKey=8d5acf2ce2e442519e8bfb99c6c9a016");
             setNews(response.data.articles);
-            console.log(response.data.articles);
+            console.log(response.data.articles.length);
 
         }
         catch (error) {
@@ -27,7 +27,7 @@ const Mainpage = () => {
 
     return (
         <>
-            <Search />
+            {/* <Search /> */}
             <NewsNavbar />
 
             <Row className='row-cols-1 row-cols-sm-2 row-cols-md-4 g-4'>
