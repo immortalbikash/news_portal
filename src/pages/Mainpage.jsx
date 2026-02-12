@@ -3,11 +3,23 @@ import Search from './Search'
 import NewsNavbar from './NewsNavbar'
 import { Button, Card, Row } from 'react-bootstrap'
 import axios from 'axios'
+import Pagination from './Pagination'
 import NewsCard from './NewsCard'
 
 const Mainpage = () => {
 
     const [news, setNews] = useState([]);
+
+
+    const [currentPage, setCurrentPage] = useState(1);
+    const [postPerPage, setPostPerPage] = useState(8);
+
+    const lastPageIndex = currentPage * postPerPage;
+    const firstPageIndex = lastPageIndex - postPerPage;
+
+    const currentPost = news.slice(firstPageIndex, lastPageIndex);
+
+
 
     const fetchNews = async () => {
         try {
@@ -32,11 +44,12 @@ const Mainpage = () => {
 
             <Row className='row-cols-1 row-cols-sm-2 row-cols-md-4 g-4'>
                 {
-                    news.map((el => (
+                    currentPost.map((el => (
                         <NewsCard data={el} />
                     )))
                 }
             </Row>
+            <Pagination totalPosts={news.length} postsPerPage={postPerPage} setCurrentPage={setCurrentPage} />
         </>
     )
 }
