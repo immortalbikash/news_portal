@@ -10,6 +10,8 @@ const Mainpage = () => {
 
     const [news, setNews] = useState([]);
 
+    const [isLoading, setIsLoading] = useState(true);
+
 
     const [currentPage, setCurrentPage] = useState(1);
     const [postPerPage, setPostPerPage] = useState(8);
@@ -25,6 +27,7 @@ const Mainpage = () => {
         try {
             const response = await axios.get("https://newsapi.org/v2/top-headlines?country=us&apiKey=8d5acf2ce2e442519e8bfb99c6c9a016");
             setNews(response.data.articles);
+            setIsLoading(false);
             console.log(response.data.articles.length);
 
         }
@@ -42,6 +45,29 @@ const Mainpage = () => {
             {/* <Search /> */}
             <NewsNavbar />
 
+            {
+                isLoading ? <>
+                    <div className="spinner-border" role="status">
+                        <span className="visually-hidden">Loading...</span>
+                    </div>
+                </> :
+                    <>
+                        {/* <NewsNavbar /> */}
+
+
+                        <Row className='row-cols-1 row-cols-sm-2 row-cols-md-4 g-4'>
+                            {
+                                currentPost.map((el => (
+                                    <NewsCard data={el} />
+                                )))
+                            }
+                        </Row>
+                        <Pagination totalPosts={news.length} postsPerPage={postPerPage} setCurrentPage={setCurrentPage} />
+                    </>
+            }
+            {/* <NewsNavbar />
+
+
             <Row className='row-cols-1 row-cols-sm-2 row-cols-md-4 g-4'>
                 {
                     currentPost.map((el => (
@@ -49,7 +75,10 @@ const Mainpage = () => {
                     )))
                 }
             </Row>
-            <Pagination totalPosts={news.length} postsPerPage={postPerPage} setCurrentPage={setCurrentPage} />
+            <Pagination totalPosts={news.length} postsPerPage={postPerPage} setCurrentPage={setCurrentPage} /> */}
+            {/* <div class="spinner-border" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div> */}
         </>
     )
 }

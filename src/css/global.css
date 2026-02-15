@@ -26,5 +26,9 @@
   color: white;
   margin: 4px;
   margin-bottom: 20px;
-  border-radius: 12px
+  border-radius: 12px;
+}
+
+.spinner-border {
+  margin-left: 45%;
 }
