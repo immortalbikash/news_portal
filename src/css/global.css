@@ -32,3 +32,26 @@
 .spinner-border {
   margin-left: 45%;
 }
+
+.container-card {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.container-card > * {
+  flex: 1 1 calc(25% - 20px);
+}
+
+@media (max-width: 768px) {
+  .container-card > * {
+    flex: 0 0 calc(50% - 20px);
+  }
+}
+
+@media (max-width: 480px) {
+  .container-card > * {
+    flex: 0 0 100%;
+  }
+}
