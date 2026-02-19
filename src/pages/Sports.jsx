@@ -20,7 +20,7 @@ const Sports = () => {
 
     const fetchNews = async () => {
         try {
-            const response = await axios.get("https://newsapi.org/v2/everything?q=sports&apiKey=8d5acf2ce2e442519e8bfb99c6c9a016");
+            const response = await axios.get(`https://newsapi.org/v2/everything?q=sports&apiKey=${import.meta.env.VITE_API_KEY}`);
             setNews(response.data.articles);
             setIsLoading(false);
             console.log(response.data.articles);

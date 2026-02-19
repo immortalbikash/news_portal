@@ -25,7 +25,9 @@ const Mainpage = () => {
 
     const fetchNews = async () => {
         try {
-            const response = await axios.get("https://newsapi.org/v2/top-headlines?country=us&apiKey=8d5acf2ce2e442519e8bfb99c6c9a016");
+            const myApi = import.meta.env.VITE_API_KEY;
+            const country = "us";
+            const response = await axios.get(`https://newsapi.org/v2/top-headlines?country=${country}&apiKey=${import.meta.env.VITE_API_KEY}`);
             setNews(response.data.articles);
             setIsLoading(false);
             console.log(response.data.articles.length);
