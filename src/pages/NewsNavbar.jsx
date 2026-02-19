@@ -10,16 +10,15 @@ const NewsNavbar = () => {
                     <Navbar.Brand to="#home"><Link className='text-white' to="/">News</Link></Navbar.Brand>
                     <Nav className="me-auto">
                         <Nav.Link href="#home"><Link className='text-white' to='/business'>Business</Link></Nav.Link>
-                        <Nav.Link href="#features">Business</Nav.Link>
+                        <Nav.Link href="#pricing"><Link className='text-white' to='/sports'> Sports </Link></Nav.Link>
                         <Nav.Link href="#pricing">Entertainment</Nav.Link>
                         <Nav.Link href="#pricing">General</Nav.Link>
                         <Nav.Link href="#pricing">Health</Nav.Link>
                         <Nav.Link href="#pricing">Science</Nav.Link>
-                        <Nav.Link href="#pricing">Sports</Nav.Link>
                         <Nav.Link href="#pricing">Technology</Nav.Link>
                     </Nav>
                 </Container>
-            </Navbar>
+            </Navbar >
             <br />
         </>
     )

@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react'
+import { NavLink } from 'react-bootstrap'
 import NewsNavbar from './NewsNavbar'
 import axios from 'axios';
 import NewsCard from './NewsCard';
 import Pagination from './Pagination';
 
-const Business = () => {
+const Sports = () => {
 
     const [news, setNews] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
@@ -19,25 +20,24 @@ const Business = () => {
 
     const fetchNews = async () => {
         try {
-            const response = await axios.get("https://newsapi.org/v2/everything?q=business&apiKey=8d5acf2ce2e442519e8bfb99c6c9a016");
+            const response = await axios.get("https://newsapi.org/v2/everything?q=sports&apiKey=8d5acf2ce2e442519e8bfb99c6c9a016");
             setNews(response.data.articles);
             setIsLoading(false);
             console.log(response.data.articles);
         }
         catch (error) {
-            alert(error);
-        }
 
+        }
     }
 
     useEffect(() => {
         fetchNews()
     }, [])
 
-
     return (
         <>
             <NewsNavbar />
+
             {
                 isLoading ? <>
                     <div className="spinner-border" role="status">
@@ -50,7 +50,7 @@ const Business = () => {
                                 <NewsCard data={el} />
                             ))
                         }
-                    </div >
+                    </div>
                 </>
             }
 
@@ -59,4 +59,4 @@ const Business = () => {
     )
 }
 
-export default Business
+export default Sports
