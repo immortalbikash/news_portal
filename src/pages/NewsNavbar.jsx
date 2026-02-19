@@ -15,7 +15,7 @@ const NewsNavbar = () => {
                         <Nav.Link href="#pricing">General</Nav.Link>
                         <Nav.Link href="#pricing">Health</Nav.Link>
                         <Nav.Link href="#pricing">Science</Nav.Link>
-                        <Nav.Link href="#pricing">Technology</Nav.Link>
+                        <Nav.Link href="#pricing">Wonders</Nav.Link>
                     </Nav>
                 </Container>
             </Navbar >
